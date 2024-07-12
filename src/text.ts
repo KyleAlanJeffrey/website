@@ -28,3 +28,5 @@ class AnimatedFont {
     }, this.speed);
   }
 }
+
+export { AnimatedFont };

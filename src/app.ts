@@ -142,10 +142,10 @@ async function main() {
   const keys: { [key: string]: boolean } = {};
   window.addEventListener("keydown", keysDown);
   window.addEventListener("keyup", keysUp);
-  function keysDown(e) {
+  function keysDown(e: KeyboardEvent) {
     keys[e.key] = true;
   }
-  function keysUp(e) {
+  function keysUp(e: KeyboardEvent) {
     keys[e.key] = false;
   }
 
