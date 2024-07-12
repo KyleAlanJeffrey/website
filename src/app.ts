@@ -49,7 +49,7 @@ async function main() {
   const [appWidth, appHeight] = [app.canvas.width, app.canvas.height];
 
   // load the fonts
-  await Assets.load("../Nintendoid.ttf");
+  await Assets.load("./src/assets/Nintendoid.ttf");
   const spriteAsset = await Assets.load(
     "https://img.itch.zone/aW1hZ2UvMjI0NzExMS8xMzMxNTQyMC5wbmc=/347x500/rRN13J.png"
   );
