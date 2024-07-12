@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="./src/styles.ts" defer></script>
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="app" class>
+      <div id="overlay"
+        class="absolute h-svh w-svw grey flex flex-col items-center justify-start p-5">
+        <h1 class="text-4xl text-white"> </h1>
+      </div>
+      <div id="game-canvas"
+        class="flex h-full w-full justfiy-center">
+      </div>
+    </div>
+  </body>
+  <script type="module" src="./src/app.ts" defer></script>
+</html>
