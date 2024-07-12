@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
 import { Assets, Text } from "pixi.js";
-
+import Nintendoid from "./assets/Nintendoid.ttf";
 const PADDING = 25;
 const FrogMovement = { blocked: false };
 
@@ -10,21 +10,17 @@ function checkOverlap(p1: PIXI.Bounds, p2: PIXI.Bounds) {
   const l2 = { x: p2.x, y: p2.y };
   const r2 = { x: p2.x + p2.width, y: p2.y + p2.height };
   // if rectangle has area 0, no overlap
-  console.log(l1, r1, l2, r2);
   if (l1.x == r1.x || l1.y == r1.y || r2.x == l2.x || l2.y == r2.y) {
-    console.log("No overlap");
     return false;
   }
   // If one rectangle is on left side of other
   if (l1.x > r2.x || l2.x > r1.x) {
-    console.log("outside x");
     return false;
   }
 
   // If one rectangle is above other
   if (r1.y < l2.y || r2.y < l1.y) {
     {
-      console.log("outside y");
       return false;
     }
   }
@@ -49,7 +45,8 @@ async function main() {
   const [appWidth, appHeight] = [app.canvas.width, app.canvas.height];
 
   // load the fonts
-  await Assets.load("./src/assets/Nintendoid.ttf");
+  console.log(Nintendoid);
+  Assets.add({ alias: "Nintendoid", src: Nintendoid });
   const spriteAsset = await Assets.load(
     "https://img.itch.zone/aW1hZ2UvMjI0NzExMS8xMzMxNTQyMC5wbmc=/347x500/rRN13J.png"
   );
@@ -131,9 +128,7 @@ async function main() {
   // Pad all objects
   // Add all objects to the stage
   for (const obj of objects) {
-    console.log(obj);
     pad(obj);
-    console.log(obj);
     app.stage.addChild(obj);
   }
 
